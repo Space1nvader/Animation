@@ -1,0 +1,118 @@
+    /* GENERAL */
+
+    .box {
+        z-index: 1;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        background: rgba(92, 102, 240, 1);
+        border: 1px solid gray;
+        border-radius: 5px;
+        height: 20rem;
+        width: 15rem;
+    }
+
+    .sword {
+        border-radius: 100% 100% 0 0;
+        position: relative;
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 1);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 1);
+    }
+
+    .blade {
+
+        background-color: rgba(7, 233, 135, 1);
+        height: 11rem;
+        width: .8rem;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        box-shadow: -.3rem 0 0 0 hsla(0, 0%, 43%, .5) inset;
+    }
+
+    .cross {
+        height: 1.2rem;
+        width: 2rem;
+        bottom: -1rem;
+        left: calc(50% - 1rem);
+
+    }
+
+    .cross,
+    .cross::after {
+        position: absolute;
+        background: rgba(224, 224, 224, 1);
+        -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+        border-radius: 20% 20% 100% 100%;
+    }
+
+    .cross::after {
+        content: '';
+        position: absolute;
+        height: .6rem;
+        width: 5rem;
+        z-index: -1;
+        top: .2rem;
+
+        left: calc(50% - 2.5rem);
+    }
+
+    .eye {
+        overflow: hidden;
+        position: absolute;
+        height: 1rem;
+        width: 1rem;
+        border: 1px solid #000000;
+        background: #ffffff;
+        border-radius: 20% 100%;
+        transform: rotate(-43deg);
+        left: calc(50% - .56rem);
+    }
+
+    .eye::before {
+        position: absolute;
+        content: '';
+        height: .4rem;
+        width: .4rem;
+        background: black;
+        top: 30%;
+        left: 30%;
+        border-radius: 100% 30%;
+    }
+
+    .eye::after {
+        animation: eye 5s infinite;
+        content: '';
+        position: absolute;
+        height: 1.1rem;
+        width: 1.1rem;
+        background: #000000;
+        border-radius: 20% 100%;
+        top: -.7rem;
+        right: -.6rem
+    }
+
+    @keyframes eye {
+        0 {
+            top: -.7rem;
+            right: -.6rem
+        }
+
+        3% {
+            top: -1px;
+            right: 0;
+        }
+
+        6% {
+            top: -.7rem;
+            right: -.6rem
+        }
+
+        100% {
+            top: -.7rem;
+            right: -.6rem
+        }
+
+    }
