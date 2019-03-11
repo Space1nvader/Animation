@@ -21,7 +21,6 @@
     }
 
     .blade {
-
         background-color: rgba(7, 233, 135, 1);
         height: 11rem;
         width: .8rem;
@@ -35,17 +34,17 @@
         width: 2rem;
         bottom: -1rem;
         left: calc(50% - 1rem);
-
     }
 
     .cross,
     .cross::after,
-    .hand {
+    .hand,
+    .hand::after {
         position: absolute;
         background: rgba(224, 224, 224, 1);
-        -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
-        -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
-        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.5);
         border-radius: 20% 20% 100% 100%;
     }
 
@@ -84,7 +83,6 @@
     }
 
     .eye::after {
-        animation: eye 5s infinite;
         content: '';
         position: absolute;
         height: 1.1rem;
@@ -92,25 +90,37 @@
         background: #000000;
         border-radius: 20% 100%;
         top: -.7rem;
-        right: -.6rem    ;
+        right: -.6rem;
         -webkit-border-radius: 20% 100%;
         -moz-border-radius: 20% 100%;
         -ms-border-radius: 20% 100%;
         -o-border-radius: 20% 100%;
+        animation: eye 5s infinite;
         -webkit-animation: eye 5s infinite;
-}
-    .hand{
-        position: absolute;
-        bottom: -2rem;
-        height: 4rem;
-        width: .8rem;
+    }
+
+    .hand {
+        bottom: -2.3rem;
+        height: 2rem;
+        width: .6rem;
         z-index: -1;
-        left: calc(50% - .4rem);
+        left: calc(50% - .33rem);
         -webkit-border-radius: 20%;
         -moz-border-radius: 20%;
         -ms-border-radius: 20%;
         -o-border-radius: 20%;
-}
+    }
+
+    .hand::after {
+        content: '';
+        background: inherit;
+        width: 1.1rem;
+        height: .3rem;
+        bottom: -.1rem;
+        left: calc(50% - .55rem);
+        border-radius: 30%;
+    }
+
     @keyframes eye {
         0 {
             top: -.7rem;
@@ -123,13 +133,13 @@
         }
 
         6% {
-            top: -.7rem;
-            right: -.6rem
+            top: -.9rem;
+            right: -.8rem
         }
 
         100% {
-            top: -.7rem;
-            right: -.6rem
+            top: -.9rem;
+            right: -.8rem
         }
 
     }
