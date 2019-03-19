@@ -67,217 +67,84 @@
     }
 
     .box {
-        background: #70b8ff;
+        z-index: 1;
         overflow: hidden;
         position: relative;
         margin: 0 auto;
+        background: #70b8ff;
         border: 1px solid gray;
         border-radius: 5px;
         height: 10rem;
         width: 15rem;
-        z-index: 1;
-
     }
 
-    .sky {
-        animation: change-sky 7s infinite linear;
-        position: absolute;
-        background: #000;
-        z-index: -1;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-    }
-
-    .earth {
-        overflow: hidden;
-        background: #82ff80;
-        width: 100%;
-        height: 20%;
-        position: absolute;
-        bottom: 0;
-    }
-
-    .day {
-        overflow: hidden;
-        padding: 10rem 0;
+    .pc {
         position: relative;
-        animation: change-day 7s infinite;
+        margin-top: 1.5rem;
+        height: 6.5rem;
+        width: 11rem;
+        background: white;
+        border-radius: 5px;
+        border: 4px solid #1a1a1a;
+        z-index: 3;
     }
 
-    .sun {
-        animation: loop linear 3s infinite;
-        position: absolute;
-        height: 2rem;
-        width: 2rem;
-        background: #f8fe52;
-        margin: 0 auto;
-        top: 10%;
-        right: 10%;
-
-    }
-
-    .sun:before,
-    .sun:after {
-        content: "";
-        width: 2rem;
-        height: 2rem;
-        background: inherit;
-        position: absolute;
-    }
-
-    .sun:before {
-        transform: rotate(30deg);
-    }
-
-    .sun:after {
-        transform: rotate(60deg);
-    }
-
-    .moon {
-        position: absolute;
-        height: 2.5rem;
-        width: 2.5rem;
-        background: transparent;
-        margin: 0 auto;
-        top: 80%;
-        left: 0%;
-        transform: rotate(-70deg);
-        border-radius: 50%;
-        box-shadow: 5px 10px 0 0 #FEC712;
-    }
-
-    .house {
-        border: 1px solid white;
-        position: absolute;
-        bottom: 15%;
-        left: 9%;
-        background: #eebfb4;
-        height: 2.5rem;
-        width: 4.8rem;
-        z-index: 2;
-    }
-
-    .house::after {
-        right: 10%;
-        bottom: 0;
+    .pc::after {
         content: '';
         position: absolute;
-        background: #9e3a24;
-        width: .9rem;
-        height: 1.6rem;
-        border-right: 1px solid white;
+        border-left: 3rem solid transparent;
+        border-right: 3rem solid transparent;
+        border-bottom: .9rem solid #1a1a1a;
+        bottom: -1rem;
+        left: calc(50% - 2.9rem);
     }
-
-    .house::before {
-        animation: house-light 7s infinite;
-        content: '';
-        left: 10%;
-        bottom: 25%;
-        content: '';
-        position: absolute;
-        width: 1.2rem;
-        height: 1.2rem;
-        background: #70b8ff;
-        border-left: 1px solid white;
-    }
-
-    .roof {
-        position: absolute;
-        bottom: 41%;
-        left: 4.5%;
-        margin-left: 20px;
-        width: 2.5rem;
-        z-index: 2;
-        height: 1.4rem;
-        transform: skew(-42deg);
-        background: #9e3a24;
-        border-right: 1px solid white
-    }
-    
-    .roof::after {
-        content: '';
-        position: absolute;
-        left: 1.95rem;
-        border-left: 1.3rem solid transparent;
-        border-right: 1.3rem solid transparent;
-        border-bottom: 1.4rem solid #9e3a24;
-        transform: skew(42deg);
-    }
-    .tree{
-        left: 3%;
-        z-index: 1;
-        bottom: 15%;
-        position: absolute;
-        width: .5rem;
-        height: 2.5rem;
-        background: #9e3a24;
-    }
-.tree:before{
-    z-index: 0;
-    content: '';
-    top: -1.5rem;
-    right: -1rem;
-    width: 2.5rem;
-    height: 3rem;
+.inner-screen{
     position: absolute;
-    border-radius: 50%;
-    background: green;
+    height: 100%;
+    width: 100%;
+    background: black;
+    z-index: 2;
+    overflow: hidden;
 }
-    @keyframes change-day {
-        0 {
-            transform: rotate(0)
+.inner-screen::after{
+    animation: powerup 15s infinite;
+    content: '';
+    height: .6rem;
+    width: 4rem;
+    background: white;
+    position: absolute;
+    top: calc(50% - .3rem); left: calc(50% - 2rem);
+    border-radius: 100%; 
+}
+.inner-screen::before{
+    animation: powerup 15s infinite;
+    content: '';
+    height: 4rem;
+    width: .6rem;
+    background: white;
+    position: absolute;
+    top: calc(50% - 2rem); left: calc(50% - .3rem);
+    border-radius: 100%;
+}
+
+    @keyframes powerup {
+        0% {
+            transform: scale(0);
+        }                
+        1% {
+            transform: scale(1.1);
         }
 
-        50% {
-            transform: rotate(180deg)
+        10% {
+            transform: scale(50);
+            background: #ffffff;
         }
-
+        11%{
+            background: #000000;
+        }
         100% {
-            transform: rotate(360deg)
-        }
-    }
-
-    @keyframes house-light {
-        10% {
-            background: #70b8ff;
-        }
-        20%{
-                background: #f8fe52;
-        }
-        60% {
-            background: #f8fe52;
-        }
-
-        70% {
-            background: #70b8ff;
-        }
-    }
-
-    @keyframes change-sky {
-        10% {
-            opacity: 0;
-        }
-
-        20% {
-            opacity: .9;
-        }
-
-        30% {
-            opacity: .9;
-        }
-
-        60% {
-            opacity: .9;
-        }
-
-        80% {
-            opacity: 0;
-        }
-
-        90% {
-            opacity: 0;
+            background: #000000;
+            transform: scale(50);
         }
 
     }
@@ -292,25 +159,3 @@
         }
 
     }
-
-    /* .border-box, .box, .box:after{
-    margin: 0 auto;
-    
-}
-.border-box{
-    border-radius: 5px;
-    box-sizing: border-box;
-    border: 1px solid white;
-    position: relative;
-    height: 2rem; width: 15rem;
-}
-.box {
-    border-radius: 5px;
-    animation: load infinite both 1s;
-    background: linear-gradient(45deg, #f500d8, #1a4bff, lime);
-    z-index: 5;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-}
