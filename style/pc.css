@@ -98,39 +98,51 @@
         bottom: -1rem;
         left: calc(50% - 2.9rem);
     }
-.inner-screen{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: black;
-    z-index: 2;
-    overflow: hidden;
-}
-.inner-screen::after{
-    animation: powerup 15s infinite;
-    content: '';
-    height: .6rem;
-    width: 4rem;
-    background: white;
-    position: absolute;
-    top: calc(50% - .3rem); left: calc(50% - 2rem);
-    border-radius: 100%; 
-}
-.inner-screen::before{
-    animation: powerup 15s infinite;
-    content: '';
-    height: 4rem;
-    width: .6rem;
-    background: white;
-    position: absolute;
-    top: calc(50% - 2rem); left: calc(50% - .3rem);
-    border-radius: 100%;
-}
+
+    .screen {
+        top: 0;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        overflow: hidden;
+        box-sizing: border-box
+    }
+
+    .inner {
+        background: black;
+    }
+
+    .inner::after {
+        animation: powerup 15s infinite;
+        content: '';
+        height: .6rem;
+        width: 4rem;
+        background: white;
+        position: absolute;
+        top: calc(50% - .3rem);
+        left: calc(50% - 2rem);
+        border-radius: 100%;
+    }
+
+    .inner::before {
+        animation: powerup 15s infinite;
+        content: '';
+        height: 4rem;
+        width: .6rem;
+        background: white;
+        position: absolute;
+        top: calc(50% - 2rem);
+        left: calc(50% - .3rem);
+        border-radius: 100%;
+    }
 
     @keyframes powerup {
         0% {
             transform: scale(0);
-        }                
+        }
+
         1% {
             transform: scale(1.1);
         }
@@ -139,23 +151,125 @@
             transform: scale(50);
             background: #ffffff;
         }
-        11%{
+
+        11% {
             background: #000000;
         }
+
         100% {
             background: #000000;
             transform: scale(50);
         }
-
     }
 
-    @keyframes loop {
-        0 {
-            transform: rotate(0);
+    .cmd {
+        overflow: hidden;
+        padding: 5px 8px;
+        color: lightgray;
+        font-size: 3px;
+    }
+
+    .cursor {
+        animation: cursor 15s infinite;
+        opacity: 0;
+    }
+
+    .scroll {
+        top: 0;
+        position: absolute;
+        height: 0;
+        white-space: pre;
+        animation: scrol 15s infinite;
+        overflow: hidden;
+    }
+
+
+
+    @keyframes cursor {
+        0% {
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 0;
+        }
+
+        11% {
+            opacity: 1;
+        }
+
+        12% {
+            opacity: 0;
+        }
+
+        13% {
+            opacity: 1;
+        }
+
+        14% {
+            opacity: 0;
+        }
+
+        15% {
+            opacity: 0;
+        }
+
+        16% {
+            opacity: 1;
+        }
+
+        17% {
+            opacity: 1;
+        }
+
+        18% {
+            opacity: 0;
         }
 
         100% {
-            transform: rotate(360deg);
+            opacity: 0;
+
         }
 
+    }
+
+    @keyframes scrol {
+        14% {
+            height: 0;
+        }
+
+        18% {
+            opacity: 1;
+            height: 100%;
+        }
+
+        19% {
+            opacity: 1;
+            height: 100%;
+        }
+
+        20% {
+            opacity: 1;
+            height: 100%;
+        }
+        21%{
+            opacity: 1;
+            height: 100%;
+        }       
+        22%{
+            opacity: 1;
+            height: 100%;
+        }        
+        23%{
+            opacity: 1;
+            height: 100%;
+        }        
+        24%{
+            opacity: 0;
+            height: 100%;
+        }
+
+        100% {
+            opacity: 0;
+        }
     }
