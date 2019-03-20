@@ -1,0 +1,250 @@
+h4 {
+    margin-top: 1.8rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.flexbox {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+@media screen and (min-width: 1081) {
+    .catalog .item_card {
+        padding: 0;
+        width: 25%;
+    }
+}
+
+.catalog .item_card p {
+    width: auto;
+}
+
+.divide {
+    height: 3px;
+    width: 100%;
+    background: #f7ebed;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.services-disc {
+    margin: 2rem 0;
+}
+
+.types {
+    margin: 2.6rem 0 3.2rem;
+}
+
+.type-item {
+    align-self: flex-start;
+    width: 33.3%;
+    line-height: 24px;
+    position: relative;
+    padding: 0 2rem 0 5.3rem;
+
+}
+
+.type-item:last-child {
+    margin-right: 0;
+}
+
+.type-item:after {
+    border-radius: 50%;
+    content: '';
+    background: url(/f/img/star-icon.svg) 48% 48% no-repeat;
+    height: 4.125rem;
+    width: 4.125rem;
+    background-color: #6f2e77;
+    position: absolute;
+    left: 0;
+    top: .2rem;
+}
+
+.cosmo {
+    align-items: flex-start;
+    background: url(/f/img/cosmo-bg.png) center right no-repeat;
+}
+
+.correction {
+    background: url(/f/img/correction-bg.png) center right no-repeat;
+}
+
+.about {
+    position: relative;
+    color: #ffffff;
+    justify-content: flex-start;
+    border-radius: 4px;
+    height: 20rem;
+    background-size: contain;
+    background-color: #6c2e74;
+}
+
+.about-disc {
+    z-index: 5;
+    max-width: 39rem;
+    padding: 3.4rem 0 0 3.81rem;
+}
+
+.about-disc h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.about-disc p {
+    margin-bottom: 0;
+}
+
+.about .about-disc ul {
+    margin-top: 1.7rem;
+}
+
+.about .about-disc ul li {
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.about > .about-disc > h3,
+.about > .about-disc > p,
+.about > .about-disc > ul li {
+    color: #ffffff !important;
+}
+
+.correction > .about-disc {
+    padding-top: 0;
+}
+
+.offer {
+    max-width: 55rem;
+    justify-content: space-between;
+}
+
+.offer ul li {
+    position: relative;
+    padding-left: 30px;
+}
+
+.offer ul li::before,
+.about .about-disc ul li::before {
+    content: '';
+    background: #f7ebed;
+    height: 3px;
+    width: 6px;
+    position: absolute;
+    left: 10px;
+    top: 9px;
+}
+
+.about .about-disc ul li::before {
+    left: 1.5rem;
+}
+
+.footer {
+    padding: 1.6rem 3.1rem 4rem;
+    color: #484e53;
+    background-color: #fbf3fc;
+    margin: 1.5rem auto 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #484e53;
+    white-space: nowrap;
+}
+
+.footer .tel {
+    font-weight: 700;
+    font-size: 1.85rem;
+}
+
+.footer .tel a:hover {
+    color: #6f2e77;
+}
+
+.footer .form button {
+    margin-top: 1.6rem;
+    background: rgba(111, 46, 119, 1);
+    border: none;
+    border-radius: 5px;
+    width: 149px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer .form button:hover {
+    background: rgba(111, 46, 119, .8);
+}
+
+.footer .fancyform{
+    padding: 0;
+}
+
+/* MEDIA */
+@media screen and (max-width: 769px) {
+    .services-disc {
+        text-align: justify;
+    }
+
+    .types {
+        flex-direction: column;
+        margin-bottom: 1.2rem;
+    }
+
+    .type-item {
+        width: auto;
+        margin-bottom: 2rem;
+    }
+
+    .about {
+        background-size: cover;
+        height: auto;
+        padding: 8% 5%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mask {
+        display: block;
+    }
+
+    .offer ul li {
+        padding: 0;
+        line-height: 20px;
+    }
+
+    .about-disc {
+        padding: 0;
+    }
+
+    .footer {
+        margin: 0 auto;
+        padding: 5%;
+    }
+}
