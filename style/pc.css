@@ -97,8 +97,8 @@
     .pc::before {
         height: 2rem;
         width: 1.5rem;
-        background: #1a1a1a;
-        bottom: -2rem;
+        background: #141414;
+        bottom: -2.2rem;
         left: calc(50% - .8rem);
     }
 
