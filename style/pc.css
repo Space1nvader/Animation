@@ -80,7 +80,6 @@
 
     .pc {
         position: relative;
-        margin-top: 1.5rem;
         height: 6.5rem;
         width: 11rem;
         background: white;
@@ -89,14 +88,26 @@
         z-index: 3;
     }
 
-    .pc::after {
+    .pc::after,
+    .pc::before {
         content: '';
         position: absolute;
+    }
+
+    .pc::before {
+        height: 2rem;
+        width: 1.5rem;
+        background: #1a1a1a;
+        bottom: -2rem;
+        left: calc(50% - .8rem);
+    }
+
+    .pc::after {
         border-left: 3rem solid transparent;
         border-right: 3rem solid transparent;
-        border-bottom: .9rem solid #1a1a1a;
-        bottom: -1rem;
-        left: calc(50% - 2.9rem);
+        border-bottom: 1rem solid #1a1a1a;
+        bottom: -2rem;
+        left: calc(50% - 3.05rem);
     }
 
     .screen {
@@ -183,6 +194,98 @@
         overflow: hidden;
     }
 
+    .load {
+        flex-direction: column;
+    }
+
+    .logo {
+        animation: hide-pbar 15s infinite;
+        background: white;
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-bottom: .5rem;
+    }
+
+    .border-pbar {
+        animation: hide-pbar 15s infinite;
+        border-radius: 2px;
+        box-sizing: border-box;
+        border: 1px solid white;
+        position: relative;
+        height: .3rem;
+        width: 3rem;
+    }
+
+    .pbar {
+        border-radius: 5px;
+        animation: load infinite linear 15s;
+
+        background: linear-gradient(45deg, #f500d8, #f500d8, #f500d8);
+        z-index: 5;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+
+    }
+
+    @keyframes hide-pbar {
+        0% {
+
+            opacity: 0;
+        }
+
+        27% {
+            opacity: 0;
+        }
+
+        28% {
+            opacity: 1;
+        }
+
+        57% {
+            opacity: 1;
+        }
+
+        58% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes load {
+        0% {
+            width: 0;
+        }
+
+        31% {
+            width: 0;
+        }
+
+        32% {
+            background: linear-gradient(45deg, #f500d8, #1a4bff);
+            width: 35%;
+        }
+
+        42% {
+            width: 35%;
+        }
+
+        43% {
+            width: 60%;
+        }
+
+        48% {
+            width: 100%;
+        }
+
+        100% {
+            width: 100%;
+        }
+
+    }
 
 
     @keyframes cursor {
@@ -219,10 +322,6 @@
         }
 
         17% {
-            opacity: 1;
-        }
-
-        18% {
             opacity: 0;
         }
 
@@ -236,6 +335,10 @@
     @keyframes scrol {
         14% {
             height: 0;
+        }
+
+        17% {
+            opacity: 0;
         }
 
         18% {
@@ -252,19 +355,23 @@
             opacity: 1;
             height: 100%;
         }
-        21%{
+
+        21% {
             opacity: 1;
             height: 100%;
-        }       
-        22%{
+        }
+
+        22% {
             opacity: 1;
             height: 100%;
-        }        
-        23%{
+        }
+
+        23% {
             opacity: 1;
             height: 100%;
-        }        
-        24%{
+        }
+
+        24% {
             opacity: 0;
             height: 100%;
         }
