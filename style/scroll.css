@@ -1,0 +1,128 @@
+    .box {
+        z-index: 1;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        background: rgb(196, 0, 255);
+        background: linear-gradient(121deg, rgba(196, 0, 255, 1) 0%, rgba(0, 45, 240, 1) 79%, rgba(132, 0, 240, 1) 100%);
+        border: 1px solid gray;
+        border-radius: 5px;
+        height: 10rem;
+        width: 18rem;
+    }
+
+    .list-icon {
+        box-sizing: content-box;
+        overflow: hidden;
+        border-top: 4px solid black;
+        border-bottom: 4px solid black;
+        height: 5rem;
+        width: 15rem;
+    }
+
+    .icon {
+        position: relative;
+        width: 33.3%;
+        height: 100%;
+    }
+
+    .icon img {
+        top: calc(50% - 1.5rem);
+        left: calc(50% - 1.5rem);
+        position: absolute;
+        display: block;
+        height: 3rem;
+    }
+
+    .infinite {
+        filter: blur(1px);
+    }
+
+    .start {
+        animation: scroll-normal 10s infinite;
+    }
+
+    .infinite {
+        animation: scroll-intinite .2s infinite;
+    }
+
+    .first img:last-child {
+        
+    }
+
+    @keyframes hide-icon {
+        0% {
+            opacity: 0;
+        }
+        8%{
+            opacity: 0;
+        }
+        9% {
+            opacity: 1;
+        }
+
+        40% {
+            opacity: 1;
+        }
+
+        41% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes scroll-intinite {
+        0% {
+            top: -100%;
+        }
+
+        100% {
+            top: 100%;
+        }
+    }
+
+    @keyframes scroll-normal {
+        0% {
+            top: calc(50% - 1.5rem);
+        }
+
+        5% {
+            top: calc(50% - 2.2rem);
+        }
+
+        6% {
+            top: calc(50% - 2.2rem);
+        }
+
+        8% {
+            opacity: 1;
+            top: 100%;
+        }
+
+        9% {
+            top: 100%;
+            opacity: 0;
+        }
+
+        12% {
+            top: -100%;
+            opacity: 0;
+        }
+
+        30% {
+            top: -100%;
+            opacity: 1;
+        }
+
+        45% {
+            top: calc(50% - 1.5rem);
+        }
+
+        100% {
+            top: calc(50% - 1.5rem)
+        }
+
+    }
