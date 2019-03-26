@@ -3,8 +3,11 @@
         overflow: hidden;
         position: relative;
         margin: 0 auto;
-        background: rgb(196, 0, 255);
-        background: linear-gradient(121deg, rgba(196, 0, 255, 1) 0%, rgba(0, 45, 240, 1) 79%, rgba(132, 0, 240, 1) 100%);
+        background: rgb(185, 255, 103);
+        background: -moz-linear-gradient(128deg, rgba(185, 255, 103, 1) 0%, rgba(255, 255, 255, 1) 65%, rgba(255, 255, 255, 1) 100%);
+        background: -webkit-linear-gradient(128deg, rgba(185, 255, 103, 1) 0%, rgba(255, 255, 255, 1) 65%, rgba(255, 255, 255, 1) 100%);
+        background: linear-gradient(128deg, rgba(185, 255, 103, 1) 0%, rgba(255, 255, 255, 1) 65%, rgba(255, 255, 255, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b9ff67", endColorstr="#ffffff", GradientType=1);
         border: 1px solid gray;
         border-radius: 5px;
         height: 10rem;
@@ -46,17 +49,17 @@
         animation: scroll-intinite .2s infinite;
     }
 
-    .first img:last-child {
-        
-    }
+    .first img:last-child {}
 
     @keyframes hide-icon {
         0% {
             opacity: 0;
         }
-        8%{
+
+        8% {
             opacity: 0;
         }
+
         9% {
             opacity: 1;
         }
