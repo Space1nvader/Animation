@@ -1,0 +1,158 @@
+    .box {
+        z-index: 1;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        background: blue;
+        border: 1px solid gray;
+        border-radius: 5px;
+        height: 15rem;
+        width: 25rem;
+    }
+
+    .text {
+        animation: flying-text 2s infinite;
+        position: absolute;
+        padding: 1rem 1rem;
+        top: 2rem;
+        right: 2rem;
+        border-radius: 20px;
+        background: gray;
+    }
+
+    .bill {
+        animation: flying 2s infinite;
+        position: relative;
+        border-right: 3rem solid transparent;
+        border-left: 3rem solid transparent;
+        border-bottom: 5rem solid yellow;
+        transform: skewX(10deg) rotate(-6deg)
+    }
+
+    .bill::before {
+        z-index: -1;
+        position: absolute;
+        content: '';
+        border-right: 3rem solid transparent;
+        border-left: 3rem solid transparent;
+        border-bottom: 5rem solid yellow;
+        top: 0;
+        left: -3rem;
+        filter: drop-shadow(0 0 0.5rem #ffffff);
+
+    }
+
+    .bill .eye {
+        overflow: hidden;
+        position: absolute;
+        top: 1.5rem;
+        right: -.6rem;
+        border-radius: 75% 0;
+        height: 1.5rem;
+        width: 1.5rem;
+        background: #ffffff;
+        filter: drop-shadow(0 0 1px black);
+        transform: rotate(35deg);
+    }
+
+    .bill .eye::before {
+        animation: blink 10s infinite;
+        content: '';
+        position: absolute;
+        top: -1.5rem;
+        right: .8rem;
+        border-radius: 75% 0;
+        height: 2rem;
+        width: 2rem;
+        background: black;
+        transform: rotate(-3deg)
+    }
+
+    .bill .eye::after {
+        top: .4rem;
+        left: .6em;
+        content: '';
+        position: absolute;
+        height: 1rem;
+        width: .2rem;
+        background: black;
+        border-radius: 50%;
+        transform: rotate(-35deg);
+    }
+
+    .butterfly {
+        position: absolute;
+        top: 3.5rem;
+        left: -1rem;
+        border-bottom: .4rem solid transparent;
+        border-left: .9rem solid black;
+        border-top: .4rem solid transparent;
+    }
+
+    .butterfly::after {
+        position: absolute;
+        content: '';
+        border-bottom: .4rem solid transparent;
+        border-right: .9rem solid black;
+        border-top: .4rem solid transparent;
+        top: -.39rem;
+        left: -8px;
+    }
+
+    .hat {
+        position: absolute;
+        background: #000000;
+        height: 2rem;
+        width: .3rem;
+        top: -2.4rem;
+        left: -.1rem;
+        border: 20% 20% 0 0;
+    }
+
+    .hat::after {
+        content: '';
+        background: #000000;
+        position: absolute;
+        width: 1rem;
+        height: .15rem;
+        top: 2rem;
+        left: -.4rem;
+    }
+
+    @keyframes blink {
+        49% {
+            top: -1.5rem;
+            right: .8rem;
+        }
+
+        50% {
+            top: -.2rem;
+            right: -.2rem;
+        }
+
+        52% {
+            top: -1.5rem;
+            right: .8rem;
+        }
+    }
+
+
+    @keyframes flying {
+        0% {
+            margin-top: 0rem;
+        }
+
+        50% {
+            margin-top: 2rem
+        }
+    }
+
+    @keyframes flying-text {
+        0% {
+            margin-top: 0rem;
+        }
+
+        50% {
+            margin-top: 1rem
+        }
+    }
