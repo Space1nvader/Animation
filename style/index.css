@@ -48,6 +48,7 @@
 }
 
 .general .nav a {
+    text-transform: lowercase;
     background: #ffffff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
