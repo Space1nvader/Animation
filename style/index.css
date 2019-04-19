@@ -113,6 +113,9 @@
 }
 
 @media screen and (max-width: 700px) {
+    .general {
+        margin: 5%;
+    }
     .content p{
         font-size: 2em;
     }
