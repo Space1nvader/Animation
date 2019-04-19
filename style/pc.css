@@ -206,7 +206,8 @@
 
     .logo {
         animation: hide-pbar 15s infinite;
-        background: white;
+        background: url(../img/wlogo.png) center center no-repeat;
+        background-size: contain;
         height: 1.5rem;
         width: 1.5rem;
         margin-bottom: .5rem;
@@ -225,7 +226,6 @@
     .pbar {
         border-radius: 5px;
         animation: load infinite linear 15s;
-
         background: linear-gradient(45deg, #f500d8, #f500d8, #f500d8);
         z-index: 5;
         position: absolute;
@@ -360,6 +360,7 @@
     }
 
     .ded {
+        text-align: left;
         animation: ded-screen 15s infinite;
         padding-left: 10px;
         background: #0078d7;
