@@ -1,0 +1,13 @@
+@media screen and (max-width: 600px){
+    .wrap{
+        min-width: 100%;
+    }
+    .prev{
+        left: 3%;
+    }
+    .arrow {
+        opacity: .5;
+        z-index: 111;
+        right: 3%;
+    }
+}

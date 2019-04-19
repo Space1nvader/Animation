@@ -31,61 +31,63 @@
         text-transform: uppercase;
     }
 
-    body {
-        font-family: 'PT Sans', sans-serif;
-        background-color: #aeaeae;
-    }
-
-    .prev,
-    .next {
-        background: transparent;
-        padding: .2rem 1rem;
+    .arrow {
+        background: white;
+        opacity: .7;
+        right: 15%;
+        border: 3px solid black;
+        border-radius: 5px;
+        height: 2rem;
+        width: 2rem;
         top: 50%;
-        margin-top: -1.6rem;
+        margin-top: -1rem;
         position: absolute;
     }
 
+    .arrow::after,
+    .arrow::before {
+        content: '';
+        height: 3px;
+        width: 15px;
+        position: absolute;
+        background: #000;
+        left: calc(50% - 6px);
+        border-radius: 10px;
+    }
+
+    .arrow::after {
+        top: calc(50% - 6px);
+        transform: rotate(45deg);
+    }
+
+    .arrow::before {
+        top: calc(50% + 3.6px);
+        transform: rotate(-45deg);
+    }
+
+    .arrow:hover {
+        opacity: 1;
+        transform: translateX(5px);
+        -webkit-transform: translateX(5px);
+        -moz-transform: translateX(5px);
+        -ms-transform: translateX(5px);
+        -o-transform: translateX(5px);
+    }
+
     .prev {
+        transform: rotate(180deg);
         left: 15%;
     }
 
     .prev:hover {
-        transform: translateX(-10px);
-        -webkit-transform: translateX(-10px);
-        -moz-transform: translateX(-10px);
-        -ms-transform: translateX(-10px);
-        -o-transform: translateX(-10px);
-}
-
-    .next {
-        right: 15%;
+        transform: translateX(-5px) rotate(180deg);
+        -webkit-transform: translateX(-5px) rotate(180deg);
+        -moz-transform: translateX(-5px rotate(180deg));
+        -ms-transform: translateX(-5px) rotate(180deg);
+        -o-transform: translateX(-5px) rotate(180deg);
     }
 
-    .next img {
-        transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-    }
 
-    .next:hover {
-        transform: translateX(10px);
-        -webkit-transform: translateX(10px);
-        -moz-transform: translateX(10px);
-        -ms-transform: translateX(10px);
-        -o-transform: translateX(10px);
-}
-
-    .prev a,
-    .next a {
-        display: block;
-    }
-
-    .prev img,
-    .next img {
-        height: 2.5rem;
-    }
 
     .flexbox {
         display: flex;
@@ -94,22 +96,18 @@
         justify-content: center;
     }
 
-    .wrap {
-        width: 41rem;
-        min-width: 800px;
-        margin: 0 auto;
-    }
-
     .animate {
         -webkit-transition: all .2s;
         -moz-transition: all .2s;
         -o-transition: all .2s;
-        transition: all .2s;
         -ms-transition: all .2s;
+        transition: all .2s;
     }
 
     /* GENERAL */
     #education {
+        font-family: 'PT Sans', sans-serif;
         height: 100vh;
-        overflow: hidden
+        overflow: hidden;
+        background: linear-gradient(148deg, #333333 0%, #E6E6E6 100%);
     }
